@@ -26,6 +26,10 @@
     },
     
     process: function(terms) {
+      //
+      var blank_check = terms.replace(/\s/g, '');
+      if(blank_check == ''){return false;}
+      //
       var path = $.searchbox.settings.url.split('?'),
         query = [$.searchbox.settings.param, '=', terms].join(''),
         base = path[0], params = path[1], query_string = query
